@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Defines character encoding as UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sets the viewport for responsive design -->
+
+    <title>MH-Care - Book Appointment</title> <!-- Title of the webpage -->
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap CSS for styling -->
+    <link href="styles.css" rel="stylesheet"> <!-- Linking external CSS file -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!-- Including jQuery library -->
+</head>
+<body>
+    <!-- Breadcrumb navigation for better UX -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.php">Home</a></li> <!-- Link to the homepage -->
+            <li class="breadcrumb-item active" aria-current="page">Book Appointment</li> <!-- Current page indicator -->
+        </ol>
+    </nav>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-collapse bg-light">
+        <a class="navbar-brand" href="index.html">
+            <img src="logo.png" width="180" height="80" class="d-inline-block align-top" alt="MH-Care Logo"> <!-- Logo linking to homepage -->
+        </a>
+        <!-- Toggler button for collapsing navbar on small screens -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span> <!-- Icon for the toggler button -->
+        </button>
+       <!-- Collapsible navbar links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <!-- Mental Health dropdown menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="mentalHealthDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mental Health
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="mentalHealthDropdown">
+                        <a class="dropdown-item" href="#">Finding Help</a>
+                        <a class="dropdown-item" href="#">Brochures</a> 
+                        <a class="dropdown-item" href="#">Your Mental Health Questionnaire</a> 
+                    </div>
+                </li>
+
+                <!-- Services dropdown menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a class="dropdown-item dropdown-toggle" href="#" id="psychiatryDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Psychiatry
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="psychiatryDropdown">
+                            <a class="dropdown-item" href="appointments.html">Book Appointments</a> <!-- Link to the appointments page -->
+                        </div>
+                    </div>
+                </li>
+
+                <!-- News dropdown menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        News
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="newsDropdown">
+                        <a class="dropdown-item" href="#">Press Releases</a> 
+                        <a class="dropdown-item" href="#">FAQ</a> 
+                    </div>
+                </li>
+
+                <!-- About dropdown menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        About
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <a class="dropdown-item" href="#">About Us</a> 
+                        <a class="dropdown-item" href="#">Our Team</a> 
+                        <a class="dropdown-item" href="#">Contact Us</a> 
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Language selector for English and French -->
+    <div class="language-selector">
+        <a href="#">English</a> | <a href="#">French</a>
+    </div>
+
+    <!-- Form for booking an appointment -->
+    <h1>Book a Psychiatric Appointment</h1>
+    <form id="appointmentForm">
+
+        <!-- First Name input field -->
+        <div class="form-group">
+            <label for="firstName">First Name <span class="required">*</span>:</label>
+            <input type="text" class="form-control" id="firstName" required>
+            <small class="error-message" id="firstNameError">First name is required!</small>
+        </div>
+
+        <!-- Last Name input field -->
+        <div class="form-group">
+            <label for="lastName">Last Name <span class="required">*</span>:</label>
+            <input type="text" class="form-control" id="lastName" required>
+            <small class="error-message" id="lastNameError">Last name is required!</small>
+        </div>
+
+        <!-- Phone number input field -->
+        <div class="form-group">
+            <label for="phone">Phone Number <span class="required">*</span>:</label>
+            <input type="tel" class="form-control" id="phone" required>
+            <small class="error-message" id="phoneError">Phone number is required!</small>
+        </div>
+
+        <!-- Date selection field (allowing two dates) -->
+        <div class="form-group">
+            <label for="dates">Desired Dates (choose two):</label>
+            <input type="date" class="form-control" id="dates1"> <!-- Date input field 1 -->
+            <input type="date" class="form-control" id="dates2"> <!-- Date input field 2 -->
+        </div>
+
+        <!-- Time frame selection field (check boxes) -->
+        <div class="form-group">
+            <label for="timeFrame">Desired Time Frame (choose two):</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="10:00 AM - 11:00 AM" id="time1">
+                <label class="form-check-label" for="time1">10:00 AM - 11:00 AM</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="11:00 AM - 12:00 PM" id="time2">
+                <label class="form-check-label" for="time2">11:00 AM - 12:00 PM</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="12:00 PM - 1:00 PM" id="time3">
+                <label class="form-check-label" for="time3">12:00 PM - 1:00 PM</label>
+            </div>
+            <small class="error-message" id="timeFrameError">Please select exactly two time slots.</small>
+        </div>
+
+        <!-- Email input field -->
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email"> <!-- email input -->
+        </div>
+
+        <!-- Address input field -->
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" class="form-control" id="address"> <!-- address input -->
+        </div>
+
+        <!-- City input field -->
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" class="form-control" id="city"> <!--  city input -->
+        </div>
+
+        <!-- Province input field -->
+        <div class="form-group">
+            <label for="province">Province:</label>
+            <input type="text" class="form-control" id="province"> <!--  province input -->
+        </div>
+        
+        <!-- Postal code input field -->
+        <div class="form-group">
+            <label for="postalCode">Postal Code:</label>
+            <input type="text" class="form-control" id="postalCode"> <!--  postal code input -->
+        </div>
+
+        <!-- Submit button -->
+        <button type="button" class="btn btn-primary" onclick="validateForm()">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            // Array of required field IDs
+            const requiredFields = ['firstName', 'lastName', 'phone'];
+            let isValid = true;
+
+            // Iterate over each required field to check if it's filled
+            requiredFields.forEach(field => {
+                const input = document.getElementById(field);
+                const errorElement = document.getElementById(field + 'Error');
+                if (!input.value) { // If the field is empty
+                    isValid = false;
+                    errorElement.style.display = 'block'; // Show the error message
+                    input.classList.add('is-invalid'); // Add invalid class for red border
+                } else {
+                    errorElement.style.display = 'none'; // Hide the error message
+                    input.classList.remove('is-invalid'); // Remove the red border if filled
+                }
+            });
+
+            // If all required fields are filled
+            if (isValid) {
+                alert('Form submitted successfully!');
+            }
+        }
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3">
+            <p>Contact us: <a href="mailto:contact@sjhc.london.on.ca">contact@sjhc.london.on.ca</a></p> <!-- Contact email -->
+            <p>&copy; 2024 MH-Care. All rights reserved.</p> <!-- Copyright information -->
+        </div>
+    </footer>
+    
+    <!-- JavaScript for Bootstrap functionality -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> <!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script> <!-- Popper.js for positioning tooltips/popovers -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!-- Bootstrap JavaScript library -->
+</body>
+</html>
