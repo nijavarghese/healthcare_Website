@@ -1,7 +1,9 @@
 # healthcare_Website
 
-# this is a demo webiste which let's doctor/nurse to login and add/update/delete a patient which is stored in the database.
+# This is a demo website that allows doctors and nurses to log in and add/update/delete patients records stored in the database.
 
-# here the login username and password is already stored in the database and password is generated using MD5
+# Here the login username and password are already stored in the database and the password is generated using MD5
 
 # password and login information provided in the readme.txt
+
+# You need to download the XAMPP server to run your database connection
